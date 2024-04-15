@@ -92,4 +92,16 @@ Even though Singletons provide a single access point, for thread safety in Rust,
 
 #### Reflection Publisher-2
 
+- In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
+
+MVC's Model handles both data and logic, but separating Service and Repository brings advantages. It promotes cleaner code by separating concerns (data storage in Repository, business logic in Service) and improves maintainability and testability. This separation also allows the Model to be reused with different data sources and for Services to adapt to changing business needs.
+
+- What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?
+
+Using only the Model in MVC for Program, Subscriber, and Notification would be messy. The Model would be overloaded with data and logic for interactions, making it complex, error-prone, and difficult to maintain. Tight coupling between models would further reduce flexibility and reusability. Separating Service and Repository offers a cleaner and more manageable solution.
+
+- Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+
+For software engineering projects, Postman's API client simplifies building and testing requests, collections keep things organized, collaboration features streamline teamwork, mocks simulate responses for development, and testing tools ensure quality – all contributing to a more efficient workflow.
+
 #### Reflection Publisher-3
