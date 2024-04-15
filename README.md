@@ -78,6 +78,18 @@ This is the place for you to write reflections:
 
 #### Reflection Publisher-1
 
+- In the Observer pattern diagram explained by the Head First Design Pattern book, Subscriber is defined as an interface. Explain based on your understanding of Observer design patterns, do we still need an interface (or trait in Rust) in this BambangShop case, or a single Model struct is enough?
+
+While the Observer pattern often uses interfaces for Subscribers, in BambangShop, a single Model struct might suffice. Interfaces ensure loose coupling, but Rust's ownership system can achieve similar results. If all observers need the same update logic, a single Model struct holding the data and notification logic can work. An interface might be useful if you have diverse update behaviors or need to dynamically add observers later.
+
+- id in Program and url in Subscriber is intended to be unique. Explain based on your understanding, is using Vec (list) sufficient or using DashMap (map/dictionary) like we currently use is necessary for this case?
+
+For unique identifiers like id in Program and url in Subscriber, a DashMap is better than a simple Vec.  DashMap's key-based lookups ensure uniqueness, faster retrieval, and prevent accidental duplicates that can cause issues.
+
+- When programming using Rust, we are enforced by rigorous compiler constraints to make a thread-safe program. In the case of the List of Subscribers (SUBSCRIBERS) static variable, we used the DashMap external library for thread safe HashMap. Explain based on your understanding of design patterns, do we still need DashMap or we can implement Singleton pattern instead?
+
+Even though Singletons provide a single access point, for thread safety in Rust, DashMap is a better choice. DashMap is designed for concurrent access, while Singletons require extra work in the form of mutexes to be thread-safe. Since you already have a working DashMap implementation, it's better to stick with it for thread-safe management of the subscriber list.
+
 #### Reflection Publisher-2
 
 #### Reflection Publisher-3
