@@ -12,7 +12,7 @@ impl ProductService {
         product.product_type = product.product_type.to_uppercase();
         let product_result: Product = ProductRepository::add(product);
         
-        NotificationService.notify9(product_result.product_type, "CREATED", product_result.clone());
+        NotificationService.notify(&product_result.product_type, "CREATED", product_result.clone());
         return Ok(product_result);
     }
 
