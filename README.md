@@ -105,3 +105,21 @@ Using only the Model in MVC for Program, Subscriber, and Notification would be m
 For software engineering projects, Postman's API client simplifies building and testing requests, collections keep things organized, collaboration features streamline teamwork, mocks simulate responses for development, and testing tools ensure quality – all contributing to a more efficient workflow.
 
 #### Reflection Publisher-3
+
+- Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
+
+We use the push model.
+
+- What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
+
+Advantages:
+
+Observers can control when they receive updates from the subject. This allows them to fetch data only when needed, which can be beneficial for performance and resource management.
+
+Disadvantages:
+
+Observers in a pull model may need to duplicate logic for requesting updates from the subject, leading to code duplication and potentially increased maintenance overhead.
+
+- Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+
+The implementation for this notification will be synchronous, meaning that we will not get the asynchronous quality needed for listening/receiving
